@@ -1,24 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Category from "../components/Category";
 import Value from "../components/Value";
 
-const Handler = ({value, totalValue}) => {
-    const [total, setTotal] = useState(0)
-    const addToTotal = (e) => {
-        setTotal(total + Number(e))
-        totalValue={total}
-    }
+const TotalValue = React.createContext(null)
 
-    useEffect(() => {
-        addToTotal(value)
-    }, [value])
+const Handler = () => {
+    const [thisValue, setThisValue] = useState(0)
     return(
-        <div>
-            Total: {total}
-            {total > 0 ? (<Value thisValue={addToTotal}/>) : (
-            <Category/>
-            )}
-        </div>
+        <TotalValue.Provider value={{total:thisValue}}>
+            <div>
+                {thisValue === 0 ? <React.Fragment><Value returnValue={setThisValue}/> <Category/> </React.Fragment> :
+                <React.Fragment><Value returnValue={setThisValue} /> Value: {thisValue}</React.Fragment>}
+            </div>
+        </TotalValue.Provider>
     )
 }
 
