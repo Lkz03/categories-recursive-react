@@ -3,9 +3,10 @@ import Handler from './features/Handler'
  
 
 function App() {
+
   return (
     <div>
-      <h1>Heyoo</h1>
+      <h1>Heyyyy</h1>
       <Handler />
     </div>
   );
