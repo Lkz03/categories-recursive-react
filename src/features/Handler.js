@@ -3,16 +3,16 @@ import Category from "../components/Category";
 import Value from "../components/Value";
 import {v1 as uuid} from 'uuid'
 
-const Handler = ({passValue}) => {
+const Handler = ({passValue, parent}) => {
     const [thisValue, setThisValue] = useState(0)
-    const [memValue, setMemValue] = useState(0)
     const [total, setTotal] = useState(0)
-
+    const id = uuid()
     const submitHandler = (e) => {
         setThisValue(e)
-        passValue(e + thisValue - memValue + total)
-        setMemValue(e)
+        {parent ? '' : passValue({id: id, value: e})}
     }
+
+    
 
     return (
         <div>

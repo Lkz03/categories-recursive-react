@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <h1>Heyyyy</h1>
-      <Handler />
+      <Handler parent={true}/>
     </div>
   );
 }
