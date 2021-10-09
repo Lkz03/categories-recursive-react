@@ -5,7 +5,7 @@ const Value = ({returnValue}) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        returnValue(temp)
+        returnValue(temp, true)
         setTemp('')
     }
 
