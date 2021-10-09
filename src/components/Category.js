@@ -5,8 +5,7 @@ import Handler from "../features/Handler";
 function Category({passValue}) {
     const [categories, setCategories] = useState([])
     const [title, setTitle] = useState('')
-    const [cat, setCat] = useState([])
-
+    const [array, setArray] = useState([0]) 
     const addCategory = (e) => {
         setCategories([...categories, {id: uuid(), title: e}])
     }
@@ -17,11 +16,9 @@ function Category({passValue}) {
         setTitle('')
     }
 
-    const reducer = (a, b) => a+b
-
     const addTotal = (e) => {
-        setCat([...cat, e])
-        passValue(cat.value.reduce(reducer))
+        setArray([...array, e])
+        passValue(array.reduce((a, b) => a+b) + e)
     }
 
     return(
@@ -36,7 +33,7 @@ function Category({passValue}) {
                         <div>
                             <li key={e.id}>{e.title}</li>
                                 <div>
-                                    <Handler parent={false} passValue={addTotal}/>
+                                    <Handler parent={false} passValue={addTotal} passTotal={e => console.log(e)}/>
                                 </div>
                         </div>
                     )

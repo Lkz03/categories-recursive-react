@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 const Value = ({returnValue}) => {
-    const [temp, setTemp] = useState('')
+    const [temp, setTemp] = useState()
 
     const submitHandler = (e) => {
         e.preventDefault()
