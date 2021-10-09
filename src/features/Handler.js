@@ -13,9 +13,12 @@ const Handler = ({passValue, parent, passTotal}) => {
         setMem(e+total)
     }
 
+    const changeHandler = (e) => {passTotal(e) 
+    console.log(e)}
+
     return (
         <div>
-            {total === 0 ? '' : <React.Fragment> Total: {total}</React.Fragment>}
+            {total === 0 ? '' : <React.Fragment> Total: {total}<input onChange={changeHandler} type='hidden'  value={total}/></React.Fragment>}
             {thisValue === 0 ? <React.Fragment><Value returnValue={e => submitHandler(e)}/> <Category passValue={setTotal}/> </React.Fragment> :
             <React.Fragment><Value returnValue={e => submitHandler(e)} /> Value: {thisValue}</React.Fragment>}
          </div>

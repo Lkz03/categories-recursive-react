@@ -33,7 +33,7 @@ function Category({passValue}) {
                         <div>
                             <li key={e.id}>{e.title}</li>
                                 <div>
-                                    <Handler parent={false} passValue={addTotal} passTotal={e => console.log(e)}/>
+                                    <Handler parent={false} passValue={addTotal} passTotal={addTotal}/>
                                 </div>
                         </div>
                     )
