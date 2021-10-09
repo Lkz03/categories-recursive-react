@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div>
-      <h1>Heyyyy</h1>
+      <h1>Zenitech-Task</h1>
       <Handler parent={true}/>
     </div>
   );

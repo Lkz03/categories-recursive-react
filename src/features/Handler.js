@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Category from "../components/Category";
 import Value from "../components/Value";
 
-const Handler = ({passValue, parent, passTotal}) => {
+const Handler = ({passValue, parent}) => {
     const [thisValue, setThisValue] = useState(0)
     const [total, setTotal] = useState(0)
     const [mem, setMem] = useState(0)
@@ -13,15 +13,10 @@ const Handler = ({passValue, parent, passTotal}) => {
         setMem(e+total)
     }
 
-    const changeHandler = (e) => {passTotal(e) 
-    console.log(e)}
-
     return (
         <div>
             {total === 0 ? ('') : (
-            <React.Fragment> Total: {total}
-            <input onChange={changeHandler} type='hidden'  value={total}/>
-            </React.Fragment>
+            <React.Fragment> Total: {total} </React.Fragment>
                  )}
             {thisValue === 0 ? <React.Fragment><Value returnValue={e => submitHandler(e)}/> <Category passValue={setTotal}/> </React.Fragment> :
             <React.Fragment><Value returnValue={e => submitHandler(e)} /> Value: {thisValue}</React.Fragment>}
