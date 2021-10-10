@@ -8,7 +8,9 @@ const Handler = ({passValue, parent}) => {
 
     const submitHandler = (e, bool) => {
         {(bool === true) ? (
-            setThisValue(e)
+            <React.Fragment>
+                {setThisValue(e), setTotal(0)}
+            </React.Fragment>
         ) : (
             setTotal(e)
         )}
